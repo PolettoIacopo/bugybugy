@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            font-family: 'helvetica neue', Helvetica, sans-serif;
+            text-transform: uppercase;
+            text-align: center;
+            border: 2px solid rgba(0, 0, 200, 0.6);
+            background: rgba(0, 0, 200, 0.3);
+            color: rgba(0, 0, 200, 0.6);
+            box-shadow: 1px 1px 2px rgba(0, 0, 200, 0.4) ;
+            border-radius: 10px;
+            padding: 3px 10px;
+            display: inline-block;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <p>Player 1: giovanni</p>
+
+    <div class="prova">     
+        <h1></h1>
+        
+        
+    </div>
+    
+
+   
+    <form>
+        <label for="fname">Nome:</label>
+        <input id="fname" type="text">
+        <label for="lname">Cognome:</label>
+        <input id="lname" type="text">
+        <input id="submit" type="submit">
+        
+    </form>
+    <script>
+        //esempio bottone che cambia
+        const paragraph = document.querySelector('p');
+        paragraph.addEventListener('click', updateName);
+        function updateName(){
+            let name=prompt('inserisci il nuovo nome');
+            paragraph.textContent= 'Player 1: '+name;
+        };
+        //esempio bottone che cambia
+
+        
+        //form da completare senno messaggio in h1
+        const form =document.querySelector("form");
+        const nome = document.getElementById("fname");
+        const cognome = document.getElementById("lname");
+        const scrittoPoi=document.querySelector("h1");
+        form.onsubmit =function(e){
+            if (nome.value === "" || cognoem.value ===""){
+                e.preventDefault();
+                scrittoPoi.textContent="devi inserire tutto babbo";
+            }
+        }
+
+
+        //oggetto senza classe
+        let persona = {
+            nome: 'Iacopo',
+            cognome: 'Poletto',
+            soprannome: 'pollo',
+            eta: 19,
+            colorPreferiti: ['grigio','azzurro','rosso']
+        };
+        //oggetto senza classe
+
+        //oggetto con classe
+        class computer{
+            constructor(modello, cpu){
+                this.modello=modello;
+                this.cpu=cpu
+            }
+             stampaCaratteristiche(){
+                console.log("Pc con modello: " + this.modello+ ", cpu: "+this.cpu);   
+        }
+    }
+        const pc = new computer("az123", "i9700k");
+        pc.stampaCaratteristiche();
+        //oggetto con classe
+
+        //creazione elementi in figlio dinamicamente + aggiungere altro allo stesso elemento
+        const div = document.querySelector("div");
+        const head2 = document.createElement("h2");
+        head2.textContent="ho appena creato h2 ora ";
+        div.appendChild(head2);
+
+        const extraTesto= document.createTextNode("sto aggiungendo altro che ho dimenticato");
+        head2.appendChild(extraTesto);
+        //creazione elementi in figlio dinamicamente + aggiungere altro allo stesso elemento
+
+        localStorage.getItem("key");
+        localStorage.setItem("key", val);
+        sessionStorage.getItem("key");
+        sessionStorage.setItem("key", val);
+
+        window.location.href = "url";
+    </script>
+    
+</body>
+</html>
